@@ -9,11 +9,11 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
       <TextInput
         autoCapitalize='none'
         autoCorrect={false}
-        style={styles.inputStyle}
         placeholder='Search'
         value={term}
         onChangeText={onTermChange}
-        onEndEditing={onTermSubmit}
+        onEndEditing={onTermSubmit}        
+        style={styles.inputStyle}
       />
     </View>
   );
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 5,
     marginHorizontal: 15,
+    marginBottom: 10,
     flexDirection: 'row'
   },
   inputStyle: {
