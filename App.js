@@ -1,20 +1,27 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import SearchScreen from './src/screens/SearchScreen';
-import ResultsShowScreen from './src/screens/ResultsShowScreen';
+import IndexScreen from './src/screens/IndexScreen';
+import { BlogProvider } from './src/context/BlogContext';
 
 const navigator = createStackNavigator(
   {
-    Search: SearchScreen,
-    ResultsShow: ResultsShowScreen
+    Index: IndexScreen,
   } ,
   {
-    initialRouteName: 'Search',
+    initialRouteName: 'Index',
     defaultNavigationOptions:
       {
-      title: 'Food Search'
+      title: 'Blogs'
       }
   }
 );
 
-export default createAppContainer(navigator);
+const App = createAppContainer(navigator);
+
+export default () => {
+  return (
+    <BlogProvider>
+      < App/>
+    </BlogProvider>
+  )};
